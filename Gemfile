@@ -12,6 +12,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
+gem 'rails_admin'
+
 group :doc do
   gem 'sdoc', require: false
   gem 'rdoc', require: false
