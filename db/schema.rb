@@ -17,21 +17,13 @@ ActiveRecord::Schema.define(version: 20150307201451) do
   enable_extension "plpgsql"
 
   create_table "time_data", force: :cascade do |t|
-    t.decimal  "clock_in"
-    t.decimal  "break"
-    t.decimal  "clock_out"
-    t.decimal  "overtime"
-    t.decimal  "weekly_overtime_total"
-    t.decimal  "yearly_overtime_total"
-    t.string   "note"
-    t.decimal  "weekly_total"
-    t.decimal  "year_to_date_total"
-    t.decimal  "adverage_total"
-    t.decimal  "vacation_total"
-    t.decimal  "vacation_used_total"
-    t.decimal  "vacation_left_total"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "clock_in"
+    t.datetime "break_out"
+    t.datetime "break_in"
+    t.datetime "clock_out"
+    t.string   "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

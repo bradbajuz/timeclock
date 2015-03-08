@@ -1,6 +1,7 @@
 <tr id="<%= "time_data-#{time_datum.id}" %>">
-  <td><%= time_datum.clock_in %></td>
-  <td><%= time_datum.break %></td>
-  <td><%= time_datum.clock_out %></td>
-  <td><%= time_datum.note %></td>
+  <td><%= time_datum.clock_in.to_formatted_s(:time_format) if time_datum.clock_in.present? %></td>
+  <td><%= time_datum.break_out.to_formatted_s(:time_format) if time_datum.break_out.present? %></td>
+  <td><%= time_datum.break_in.to_formatted_s(:time_format) if time_datum.break_in.present? %></td>
+  <td><%= time_datum.clock_out.to_formatted_s(:time_format) if time_datum.clock_out.present? %></td>
+  <td><%= time_datum.notes %></td>
 </tr>

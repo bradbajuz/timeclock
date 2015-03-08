@@ -1,7 +1,7 @@
 class TimeDataController < ApplicationController
 
   def index
-    @time_data = @time_data
+    @time_data = TimeDatum.all
   end
 
   def new
