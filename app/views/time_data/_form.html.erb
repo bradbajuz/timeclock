@@ -1,39 +1,46 @@
-  <div class="form-horizontal" role="form">
-    <%= form_for time_datum, remote: true do |t| %>
-      <div class="form-group">
-        <%= t.label :clock_in, class: "col-sm-4 control-label centered" %>
+<div class="form-horizontal" role="form">
+  <%= form_for time_datum do |f| %>
+    <div class="form-group">
+      <%= f.label :clock_in, class: "col-sm-4 control-label centered" %>
+      <div class="col-sm-4">
+        <%= f.datetime_field :clock_in, class: "form-control", value: Time.now.to_formatted_s(:time_format) if time_datum.clock_in.nil? %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :break_out, class: "col-sm-4 control-label centered" %>
+      <div class="col-sm-4">
+        <%= f.datetime_field :break_out, class: "form-control", value: Time.now.to_formatted_s(:time_format) if time_datum.break_out.nil? %> 
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :break_in, class: "col-sm-4 control-label centered" %>
+      <div class="col-sm-4">
+        <%= f.datetime_field :break_in, class: "form-control", value: Time.now.to_formatted_s(:time_format) if time_datum.break_in.nil? %> 
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :clock_out, class: "col-sm-4 control-label centered" %>
+       <div class="col-sm-4">
+        <%= f.datetime_field :clock_out, class: "form-control", value: Time.now.to_formatted_s(:time_format) if time_datum.clock_out.nil? %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :notes, class: "col-sm-4 control-label centered" %>
         <div class="col-sm-4">
-          <%= t.datetime_field :clock_in, value: Time.now.to_formatted_s(:time_format), class: "form-control" %>
+          <%= f.text_field :notes, class: "form-control" %>
         </div>
-      </div>
+    </div>
 
-      <div class="form-group">
-        <%= t.label :break_out, class: "col-sm-4 control-label centered" %>
-        <div class="col-sm-4">
-          <%= t.datetime_field :break_out, value: Time.now.to_formatted_s(:time_format), class: "form-control" %> 
-        </div>
+    <div class="form-group">
+      <div class="col-sm-2">
+        <%= f.submit "Save", class: "btn btn-success" %>
       </div>
-
-      <div class="form-group">
-        <%= t.label :break_in, class: "col-sm-4 control-label centered" %>
-        <div class="col-sm-4">
-          <%= t.datetime_field :break_in, value: Time.now.to_formatted_s(:time_format), class: "form-control" %> 
-        </div>
-      </div>
-
-      <div class="form-group">
-        <%= t.label :clock_out, class: "col-sm-4 control-label centered" %>
-         <div class="col-sm-4">
-          <%= t.datetime_field :clock_out, value: Time.now.to_formatted_s(:time_format), class: "form-control" %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <div class="col-sm-2">
-          <%= t.submit "Save", class: "btn btn-success" %>
-        </div>
-      </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
+</div>
 
 
