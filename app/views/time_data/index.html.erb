@@ -3,10 +3,10 @@
 
   <div class="row">
     <div class="col-md-8">
-      <%= link_to "Hit Me", time_data_path, class: 'btn btn-success', data: {toggle: "modal", target: "#modal-window", remote: "true"} %>
+      <%= link_to "Enter Time", time_data_path, class: "btn btn-success", data: {toggle: "modal", target: "#modal-window", remote: "true"} %>
     </div>
   </div>
-  <div id="modal-window" class="modal fade in"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div id="modal-window" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <%= render partial: "modal_new_time_datum" %>
   </div>
 
@@ -20,8 +20,8 @@
         <th colspan="1">Notes</th>
       </tr>
     </thead>
-    <tbody id='time_data'>
-      <%= render partial: 'time_datum', collection: @time_data %>
+    <tbody id="time_data">
+      <%= render partial: "time_datum", collection: @time_data %>
     </tbody>
   </table>
 </div>

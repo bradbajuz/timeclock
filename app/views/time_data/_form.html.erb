@@ -1,30 +1,31 @@
 <div class="form-horizontal" role="form">
   <%= form_for time_datum do |f| %>
+
     <div class="form-group">
       <%= f.label :clock_in, class: "col-sm-4 control-label centered" %>
       <div class="col-sm-4">
-        <%= f.datetime_field :clock_in, class: "form-control", value: Time.now.to_formatted_s(:time_format) if time_datum.clock_in.nil? %>
+        <%= f.time_field :clock_in, class: "form-control" %>
       </div>
     </div>
 
     <div class="form-group">
       <%= f.label :break_out, class: "col-sm-4 control-label centered" %>
       <div class="col-sm-4">
-        <%= f.datetime_field :break_out, class: "form-control", value: Time.now.to_formatted_s(:time_format) if time_datum.break_out.nil? %> 
+        <%= f.time_field :break_out, class: "form-control" %> 
       </div>
     </div>
 
     <div class="form-group">
       <%= f.label :break_in, class: "col-sm-4 control-label centered" %>
       <div class="col-sm-4">
-        <%= f.datetime_field :break_in, class: "form-control", value: Time.now.to_formatted_s(:time_format) if time_datum.break_in.nil? %> 
+        <%= f.time_field :break_in, class: "form-control" %> 
       </div>
     </div>
 
     <div class="form-group">
       <%= f.label :clock_out, class: "col-sm-4 control-label centered" %>
        <div class="col-sm-4">
-        <%= f.datetime_field :clock_out, class: "form-control", value: Time.now.to_formatted_s(:time_format) if time_datum.clock_out.nil? %>
+        <%= f.time_field :clock_out, class: "form-control" %>
       </div>
     </div>
 
@@ -34,13 +35,9 @@
           <%= f.text_field :notes, class: "form-control" %>
         </div>
     </div>
-
-    <div class="form-group">
-      <div class="col-sm-2">
-        <%= f.submit "Save", class: "btn btn-success" %>
-      </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
     </div>
   <% end %>
 </div>
-
-
