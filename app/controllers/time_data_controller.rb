@@ -2,12 +2,11 @@ class TimeDataController < ApplicationController
   respond_to :html, :js
 
   def index
-    @time_datum = TimeDatum.new
     @time_data = TimeDatum.all
   end
 
   def new
-    
+    @time_datum = TimeDatum.new
   end
 
   def create

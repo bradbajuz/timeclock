@@ -5,6 +5,6 @@
   <td><%= time_datum.clock_out.to_formatted_s(:time_format) if time_datum.clock_out.present? %></td>
   <td><%= time_datum.notes %></td>
   <td>
-    <%= link_to "Edit", edit_time_datum_path(time_datum.id), class: "btn btn-primary btn-xs" %>
+    <%= link_to "Edit", edit_time_datum_path(time_datum.id), class: "btn btn-primary btn-xs", data: {toggle: "modal", target: "#modal-window", remote: "true" } %>
   </td>
 </tr>
