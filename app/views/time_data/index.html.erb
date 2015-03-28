@@ -3,12 +3,15 @@
 
   <div class="row">
     <div class="col-md-8">
-      <%= link_to "Enter Time", time_data_path, class: "btn btn-success", data: {toggle: "modal", target: "#modal-window", remote: "true"} %>
+      <%= link_to "Enter Time", new_time_datum_path, class: "btn btn-success", data: {toggle: "modal", target: "#modal-window" }, remote: true %>
     </div>
   </div>
   <div id="modal-window" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <%= render partial: "modal_new_time_datum" %>
+    <%= render template: "time_data/new" %>
   </div>
+<!--   <div id="modal-edit-window" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="myModalLabelEdit" aria-hidden="true">
+    <%= render template: "time_data/edit" %>
+  </div> -->
 
   <table class="table table-striped table-condensed">
     <thead>

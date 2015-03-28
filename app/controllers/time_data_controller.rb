@@ -6,6 +6,10 @@ class TimeDataController < ApplicationController
     @time_data = TimeDatum.all
   end
 
+  def new
+    
+  end
+
   def create
     @time_datum = TimeDatum.new(time_datum_params)
 
@@ -19,6 +23,20 @@ class TimeDataController < ApplicationController
 
     respond_with(@time_datum) do |f|
       f.html { redirect_to time_data_path }
+    end
+  end
+
+  def edit
+    @time_datum = TimeDatum.find(params[:id])
+  end
+
+  def update
+    @time_datum = TimeDatum.find(params[:id])
+
+    if @time_datum.update_attributes(time_datum_params)
+      redirect_to time_data_path
+    else
+      flash[:error] = "Error updating time. Please try again."
     end
   end
 
