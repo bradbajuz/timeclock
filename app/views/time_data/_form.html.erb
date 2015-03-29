@@ -4,28 +4,28 @@
     <div class="form-group">
       <%= f.label :clock_in, class: "col-sm-4 control-label centered" %>
       <div class="col-sm-4">
-        <%= f.time_field :clock_in, class: "form-control" %>
+        <%= f.datetime_field :clock_in, as: :string, value: time_format(f.object.clock_in), class: "form-control" %>
       </div>
     </div>
 
     <div class="form-group">
       <%= f.label :break_out, class: "col-sm-4 control-label centered" %>
       <div class="col-sm-4">
-        <%= f.time_field :break_out, class: "form-control" %> 
+        <%= f.datetime_field :break_out, as: :string, value: time_format(f.object.break_out), class: "form-control" %> 
       </div>
     </div>
 
     <div class="form-group">
       <%= f.label :break_in, class: "col-sm-4 control-label centered" %>
       <div class="col-sm-4">
-        <%= f.time_field :break_in, class: "form-control" %> 
+        <%= f.datetime_field :break_in, as: :string, value: time_format(f.object.break_in), class: "form-control" %> 
       </div>
     </div>
 
     <div class="form-group">
       <%= f.label :clock_out, class: "col-sm-4 control-label centered" %>
        <div class="col-sm-4">
-        <%= f.time_field :clock_out, class: "form-control" %>
+        <%= f.datetime_field :clock_out, as: :string, value: time_format(f.object.clock_out), class: "form-control" %>
       </div>
     </div>
 
